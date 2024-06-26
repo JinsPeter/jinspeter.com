@@ -1,0 +1,31 @@
+{
+    "statusCounts": [
+        {
+            "icon": "icon-pencil-ruler",
+            "name": "Completed Projects",
+            "count": 3
+        },
+        {
+            "icon": "icon-users",
+            "name": "Happy Clients",
+            "count": 2
+        },
+        {
+            "icon": "icon-light-bulb",
+            "name": "Crazy Ideas",
+            "count": 15
+        },
+        {
+            "icon": "icon-badge",
+            "name": "Stack Overflow Reputations"
+        },
+        {
+            "icon": "icon-cup",
+            "name": "Coffee Cups"
+        },
+        {
+            "icon": "icon-clock",
+            "name": "Hours"
+        }
+    ]
+}

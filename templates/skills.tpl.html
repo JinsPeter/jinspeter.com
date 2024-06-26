@@ -1,0 +1,14 @@
+<h3>{{:header}}</h3>
+<p> {{:description}}</p>
+<ul class="skill-bars">
+    {{for skills}}
+    <li>
+        <div class="progress" title="{{:rating}}">
+        </div>
+        <div class="skill-name">
+            <strong>{{:name}}</strong>
+        </div>
+    </li>
+    {{/for}}
+
+</ul>

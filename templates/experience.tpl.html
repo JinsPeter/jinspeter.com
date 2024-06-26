@@ -1,0 +1,34 @@
+<div class="col-twelve resume-header">
+
+    <h2>Software Experience</h2>
+
+</div>
+<!-- /resume-header -->
+
+<div class="col-twelve">
+
+    <div class="timeline-wrap">
+        {{for career}}
+
+        <div class="timeline-block">
+
+            <div class="timeline-ico">
+                <i class="fa fa-briefcase"></i>
+            </div>
+
+            <div class="timeline-header">
+                <title="{{:stream}}">{{:position}}</h3>
+                    <p title="{{:experience}}">{{:duration}}</p>
+            </div>
+
+            <div class="timeline-content">
+                <h4>{{:company}}</h4>
+                <p>{{:description}}
+                </p>
+            </div>
+
+        </div>
+        <!-- /timeline-block -->
+        {{/for}}
+    </div>
+</div>

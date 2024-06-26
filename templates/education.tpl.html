@@ -1,0 +1,38 @@
+<div class="col-twelve resume-header">
+
+    <h2>Education</h2>
+
+</div>
+<!-- /resume-header -->
+
+<div class="col-twelve">
+
+    <div class="timeline-wrap">
+        {{for education}}
+        <div class="timeline-block">
+
+            <div class="timeline-ico">
+                <i class="fa fa-graduation-cap"></i>
+            </div>
+
+            <div class="timeline-header">
+                <h3 title="{{:specialization}}">{{:name}}</h3>
+                <p>{{:duration}}</p>
+            </div>
+
+            <div class="timeline-content">
+                <h4 title="{{:university}}">{{:institution}}</h4>
+                <p>{{:description}}</p>
+            </div>
+
+        </div>
+        <!-- /timeline-block -->
+        {{/for}}
+    </div>
+    <!-- /timeline-wrap -->
+
+</div>
+<!-- /col-twelve -->
+
+</div>
+<!-- /resume-timeline -->
