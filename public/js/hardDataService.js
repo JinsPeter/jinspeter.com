@@ -90,8 +90,7 @@ var hardDataService = (function() {
             passYear: 2011,
             percentage: 91,
             get description() {
-                return "Senior Secondary Schooling from " + this.institution + " under " + this.specialization + " completed with " +
-                    this.percentage + "%.";
+                return "Senior Secondary Schooling from " + this.institution + ", studied " + this.specialization + " and graduated with " + this.percentage + "%.";
             }
         }, {
             name: "High School",
@@ -103,7 +102,7 @@ var hardDataService = (function() {
             passYear: 2009,
             percentage: 85,
             get description() {
-                return "High School completed in the year " + this.passYear + " with an " + this.percentage + "% aggregate."
+                return "High School graduated in the year " + this.passYear + " with an " + this.percentage + "% aggregate."
             }
         }],
         services = [{
@@ -132,30 +131,61 @@ var hardDataService = (function() {
             description: "Talk to me about your business or your business situation. I'll come up with solution for it."
         }],
         career = [{
-            position: "Senior Software Engineer",
-            stream: "Full Stack developer",
-            company: "RedBlack Software Pvt. Ltd.",
-            duration: "June 2018 - still here",
-            expObj: dateDiff("06/04/2018"),
-            get experience() {
-                return `${this.expObj.years ? this.expObj.years + " Years" : ""} ${this.expObj.months ? this.expObj.months + " months" : ""}, ${this.expObj.days ? this.expObj.days + " days" : ""} and counting.`;
+            position: "Software Architect",
+            stream: "Solutions Architect",
+            company: "intelliflo",
+            companyLegalName: "Intelliflo Software India Pvt. Ltd",
+            duration: "January 2024 - Still doing this",
+            experience: dateDiff('01/01/2024'),
+            ageFrom: dateDiff('01/01/2024'),
+            get experienceText() {
+                return `${this.experience.years ? this.experience.years + " years" : ""}${this.experience.years && this.experience.months && this.experience.days ? "," : this.experience.years&&(this.experience.months||this.experience.days) ? "and": "" } ${this.experience.months ? this.experience.months + " months" : ""} ${(this.experience.years||this.experience.months)&&this.experience.days ? "and " + this.experience.days +" days":""}`;
             },
             get description() {
-                return "I started here as Senior Software Engineer "+ this.expObj.years + " years " + this.expObj.months + " months back and has been working on their huuuge product as a full stack web developer. Got to work with Aurelia (my third SPA framework).";
+                return `Still the same company. Got promoted as a Software Architect ${this.ageFrom.years ? this.ageFrom.years + " years" : ""} ${this.ageFrom.years && this.ageFrom.months ? "and" : ""} ${this.ageFrom.months ? this.ageFrom.months + " months" : ""} ago. I am still managing the modernization of our system. But, roles come with bigger responsibilities. Trying my best to swim across the current without drowning.`;
+            }
+        },{
+            position: "Principal Software Engineer",
+            stream: "Application Developer",
+            company: "intelliflo",
+            companyLegalName: "Intelliflo Software India Pvt. Ltd",
+            duration: "February 2021 - December 2023",
+            experience: dateDiff('02/01/2021', '01/01/2024'),
+            ageFrom: dateDiff('02/01/2021'),
+            get experienceText() {
+                return `${this.experience.years} years and ${this.experience.months} months`;
+            },
+            get description() {
+                return `This is still the same company with a new name. I got promoted as a Principal Software Engineer by early 2021 and was tasked as the solution maker of the team. I enjoyed doing this for ${this.experienceText}. I designed applications, feasibility studied and adopted new technologies like gRPC and Docker, mentored and encouraged team members to improve on their learning and skill set. I also integrated Nuke based build systems to enhance legacy CI systems to use Domain Service Language (C# in my case) based build tooling. I was also entrusted to identify and manage the effort to modernize our main product.`;
+            }
+        }, {
+            position: "Senior Software Engineer",
+            stream: "Full Stack developer",
+            company: "RedBlack",
+            companyLegalName: "RedBlack Software Pvt. Ltd.",
+            duration: "June 2018 - January 2021",
+            experience: dateDiff('06/04/2018', '01/31/2020' ),
+            ageFrom: dateDiff('06/04/2018'),
+            get experienceText() {
+                return `${this.experience.years} years, ${this.experience.months} months and ${this.experience.days}`;
+            },
+            get description() {
+                return `I started here as Senior Software Engineer ${this.ageFrom.years} years ${this.ageFrom.months ? "and" + this.ageFrom.months + " months" : ""} back and worked on our huuuge investment management product as a full stack web  application developer. Started learning my technology deeper rather than wider. Got to work with Aurelia (my third SPA framework). I enjoyed the resposbilities like reviewing code and recommending best practices.`;
             }
         }, {
             position: "Software Engineer",
             stream: ".NET",
-            company: "QBurst Technologies Pvt. Ltd.",
+            company: "QBurst",
+            companyLegalName: "QBurst Technologies Pvt. Ltd.",
             duration: "June 2015 - May 2018",
-            expObj: dateDiff('06/08/2015', '05/31/2018'),
-            get experience() {
-                return `${this.expObj.years ? this.expObj.years + " Years" : ""}, ${this.expObj.months ? this.expObj.months + " months" : ""} and ${this.expObj.days ? this.expObj.days + " days." : ""}`;
+            experience: dateDiff('06/08/2015', '05/31/2018'),
+            ageFrom: dateDiff('06/08/2015'),
+            get experienceText() {
+                return `${this.experience.years} years, ${this.experience.months} months and ${this.experience.days} days`;
             },
             get description() {
-                return `I joined here a fresher ${totalExperience().obj.years} years ago and this place was my time killer
-                    for nearly ${this.expObj.years + 1} years. I got to work on 3 projects as a full stack developer during the period
-                    this is where most of my knowledge base came from.`;
+                return `I joined here a fresher ${this.ageFrom.years} years ago and this place was my time killer
+                    for nearly ${this.experience.years + 1} years. I got to work on 3 projects as a full stack developer during the period. I was able to gain a variety of diversified technology exposure from here.`;
             }
         }],
 
@@ -166,20 +196,20 @@ var hardDataService = (function() {
             name: "JavaScript + TypeScript",
             rating: 80
         }, {
-            name: "ASP.NET Web APIs",
+            name: "ASP.NET",
             rating: 80
         }, {
             name: "Angular 5",
             rating: 80
         }, {
-            name: "ASP.NET Core 2.0",
-            rating: 65
+            name: ".NET",
+            rating: 80
         }, {
-            name: "ASP.NET Core Web APIs",
-            rating: 50
+            name: "Nuke Build",
+            rating: 80
         }, {
-            name: "ASP.NET Core Linux Hosting",
-            rating: 50
+            name: "Docker",
+            rating: 60
         }, {
             name: "Angular JS",
             rating: 85
@@ -187,8 +217,8 @@ var hardDataService = (function() {
             name: "Azure Services",
             rating: 65
         }, {
-            name: "Azure Serverless Systems",
-            rating: 70
+            name: "FIX",
+            rating: 80
         }, {
             name: "Entity Framework",
             rating: 70
