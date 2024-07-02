@@ -68,7 +68,7 @@ var hardDataService = (function() {
             cssClass: "fa fa-twitter"
         }],
         education = [{
-            name: "Graduation",
+            name: "Professional",
             course: "Bachelor of Technology",
             specialization: "Electrical and Electronics Engineering",
             institution: "Government Engineering College, Thrissur",
@@ -78,10 +78,10 @@ var hardDataService = (function() {
             percentage: 69.3,
             get description() {
                 return "I completed my technology graduation in " + this.specialization + " from " + this.institution + " under " +
-                    this.university + " during " + this.duration + "with an overall " + this.percentage + "%.";
+                    this.university + " during " + this.duration + " with an overall " + this.percentage + "%.";
             }
         }, {
-            name: "Secondary Schooling",
+            name: "Secondary School",
             course: "XII",
             specialization: "Maths and Computer Science",
             institution: "Vimalagiri Public School, Kothamangalam",
@@ -141,7 +141,7 @@ var hardDataService = (function() {
                 return `${this.expObj.years ? this.expObj.years + " Years" : ""} ${this.expObj.months ? this.expObj.months + " months" : ""}, ${this.expObj.days ? this.expObj.days + " days" : ""} and counting.`;
             },
             get description() {
-                return "I started here as Senior Engineer " + this.expObj.months + " months back and has been working on their huuuge product as a full stack web developer. Got to work with Aurelia (my third SPA framework).";
+                return "I started here as Senior Software Engineer "+ this.expObj.years + " years " + this.expObj.months + " months back and has been working on their huuuge product as a full stack web developer. Got to work with Aurelia (my third SPA framework).";
             }
         }, {
             position: "Software Engineer",
